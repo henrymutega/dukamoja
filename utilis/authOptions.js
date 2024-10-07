@@ -2,7 +2,6 @@ import CredentialProvider from "next-auth/providers/credentials";
 import User from "@/models/user";
 import bcrypt from "bcrypt";
 import dbConnect from "./dbConnect";
-import { signIn } from "next-auth/react";
 
 export const authOptions = {
     session : {
@@ -32,5 +31,5 @@ export const authOptions = {
     secret: process.env.NEXTAUTH_SECRET,
     pages: {
         signIn: "/login"
-    }
-}
+    },
+};
