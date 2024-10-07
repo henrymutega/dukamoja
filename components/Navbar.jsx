@@ -1,4 +1,6 @@
+"use client"
 import Link from "next/link";
+import { useSession, signOut } from "next-auth/react";
 
 export default function Navbar(){
     return(

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
-import auth from "next-auth/react";
+import {signIn} from "next-auth/react";
 
 export default function Register(){
     const[email, setEmail] = useState("yeyeye@gmail.com");
@@ -17,7 +17,8 @@ export default function Register(){
         try{
             setLoading(true);
 
-            const result = await fetch(Credential, {
+            const result = await signIn("credential", {
+                redirect: false,
                 email,
                 password,
             });
