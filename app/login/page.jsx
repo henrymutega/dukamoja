@@ -5,8 +5,8 @@ import { useRouter } from "next/navigation";
 import {signIn} from "next-auth/react";
 
 export default function Register(){
-    const[email, setEmail] = useState("yeyeye@gmail.com");
-    const[password, setPassword] = useState("yeyeyyeyeye");
+    const[email, setEmail] = useState("janes@gmal.com");
+    const[password, setPassword] = useState("12345");
     const[loading, setLoading] = useState(false);
 
     const router = useRouter();
@@ -25,7 +25,7 @@ export default function Register(){
 
 
             if (result?.error){
-                toast.error("Email or Password Incorrect.");
+                toast.error(result?.error);
                 setLoading(false);
             }else{
                 toast.success("Login successfully");
