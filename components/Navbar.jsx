@@ -14,22 +14,24 @@ export default function Navbar(){
 
             {status === "authenticated" ? (  
                  <div className="d-flex">
-                    <Link href="/dashboard/user" className="nav-link">
+                    <Link href="/dashboard/user" className="nav-link text-capitalize">
                        Welcome {data?.user?.name}
                     </Link>
-                    <a className="nav-link pointer"
+                    <a className="nav-link pointer text-capitalize"
                     onClick={() => signOut({callbackUrl: "/"})}
                     >
                         Logout
                     </a>
                 </div>
-                ) : 
+                ) : status === "loading" ? (
+                    <a className="nav-link text-capitalize pointer">Please wait...</a>
+                ) :
                 (
                 <div className="d-flex">
-                    <Link href="/login" className="nav-link">
+                    <Link href="/login" className="nav-link text-capitalize">
                         Login
                     </Link>
-                    <Link href="/register" className="nav-link">
+                    <Link href="/register" className="nav-link text-capitalize">
                         Register
                     </Link>
                 </div>
